@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const SESSION_KEY = "hindley-intro-seen";
 const FADE_MS = 600;
-const FALLBACK_TIMEOUT_MS = 6000; // safety net if the video never fires "ended"
+const FALLBACK_TIMEOUT_MS = 13000; // safety net if the video never fires "ended" — video is ~10s
 
 export default function LoadingScreen() {
   const [mounted, setMounted] = useState(false);
@@ -13,34 +12,22 @@ export default function LoadingScreen() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const finishedRef = useRef(false);
 
-  useEffect(() => {
-    let seenThisSession = false;
-    try {
-      seenThisSession = sessionStorage.getItem(SESSION_KEY) === "1";
-    } catch {
-      // sessionStorage unavailable (private mode edge cases) — treat as unseen
-    }
+  const finish = () => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    setFading(true);
+    window.setTimeout(() => setDone(true), FADE_MS);
+  };
 
+  useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (seenThisSession || reducedMotion) {
+    if (reducedMotion) {
       setDone(true);
       return;
     }
 
     setMounted(true);
-
-    const finish = () => {
-      if (finishedRef.current) return;
-      finishedRef.current = true;
-      try {
-        sessionStorage.setItem(SESSION_KEY, "1");
-      } catch {
-        // ignore
-      }
-      setFading(true);
-      window.setTimeout(() => setDone(true), FADE_MS);
-    };
 
     const fallback = window.setTimeout(finish, FALLBACK_TIMEOUT_MS);
     return () => window.clearTimeout(fallback);
@@ -50,22 +37,20 @@ export default function LoadingScreen() {
     const video = videoRef.current;
     if (!mounted || !video) return;
 
-    const onEnded = () => {
-      try {
-        sessionStorage.setItem(SESSION_KEY, "1");
-      } catch {
-        // ignore
-      }
-      setFading(true);
-      window.setTimeout(() => setDone(true), FADE_MS);
-    };
-    const onError = onEnded;
+    video.addEventListener("ended", finish);
+    video.addEventListener("error", finish);
 
-    video.addEventListener("ended", onEnded);
-    video.addEventListener("error", onError);
+    // Some mobile browsers reject the implicit autoplay from the `autoPlay`
+    // attribute even when muted+playsInline; force it explicitly and skip
+    // the intro rather than get stuck if the browser still refuses.
+    const playPromise = video.play();
+    if (playPromise) {
+      playPromise.catch(() => finish());
+    }
+
     return () => {
-      video.removeEventListener("ended", onEnded);
-      video.removeEventListener("error", onError);
+      video.removeEventListener("ended", finish);
+      video.removeEventListener("error", finish);
     };
   }, [mounted]);
 
@@ -95,15 +80,7 @@ export default function LoadingScreen() {
           </video>
           <button
             type="button"
-            onClick={() => {
-              try {
-                sessionStorage.setItem(SESSION_KEY, "1");
-              } catch {
-                // ignore
-              }
-              setFading(true);
-              window.setTimeout(() => setDone(true), FADE_MS);
-            }}
+            onClick={finish}
             className="focus-ring absolute bottom-6 right-6 font-display text-xs uppercase tracking-[0.2em] text-bone/50 transition-colors hover:text-amber"
           >
             Skip
