@@ -1,76 +1,55 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useReducedMotion } from "@/lib/useReducedMotion";
-import { getGsap } from "@/lib/gsap-client";
+import { animate, useInView, useMotionValue, useReducedMotion } from "framer-motion";
 
-const stats = [
-  { value: 15, suffix: "+", label: "Years in the Electrical Trade" },
-  { value: 3, suffix: "", label: "Years as a Partner Before Going Solo" },
-  { value: 8, suffix: "", label: "Job Specialties Covered" },
-  { value: 1, suffix: "", label: "Electrician Who Shows Up — Every Job" },
-];
-
-export default function StatBand() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const numberRefs = useRef<(HTMLSpanElement | null)[]>([]);
+function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
+  const spanRef = useRef<HTMLSpanElement>(null);
+  const inView = useInView(spanRef, { once: true, margin: "-80px" });
   const reduced = useReducedMotion();
+  const count = useMotionValue(0);
 
   useEffect(() => {
-    if (reduced || !sectionRef.current) return;
+    if (!inView || !spanRef.current) return;
 
-    const { gsap, ScrollTrigger } = getGsap();
-    const ctx = gsap.context(() => {
-      const trigger = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top+=80",
-        end: "+=220",
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-      });
+    if (reduced) {
+      spanRef.current.textContent = `${to}${suffix}`;
+      return;
+    }
 
-      numberRefs.current.forEach((el, i) => {
-        if (!el) return;
-        const target = { val: 0 };
-        gsap.to(target, {
-          val: stats[i].value,
-          duration: 1.4,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top+=80",
-            toggleActions: "play none none reverse",
-          },
-          onUpdate: () => {
-            el.textContent = Math.round(target.val).toString();
-          },
-        });
-      });
+    const controls = animate(count, to, {
+      duration: 1.6,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (value) => {
+        if (spanRef.current) {
+          spanRef.current.textContent = `${Math.round(value)}${suffix}`;
+        }
+      },
+    });
 
-      return () => trigger.kill();
-    }, sectionRef);
+    return () => controls.stop();
+  }, [inView, reduced, to, suffix, count]);
 
-    return () => ctx.revert();
-  }, [reduced]);
+  return <span ref={spanRef}>{reduced ? `${to}${suffix}` : "0"}</span>;
+}
 
+export default function StatBand() {
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex min-h-[70vh] items-center border-y border-bone/10 bg-ground bg-grid"
-    >
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-2 gap-8 px-6 py-16 md:grid-cols-4 md:gap-6">
-        {stats.map((stat, i) => (
-          <div key={stat.label} className="text-center md:text-left">
-            <div className="font-display text-5xl tabular-nums text-amber sm:text-6xl">
-              <span ref={(el) => { numberRefs.current[i] = el; }}>
-                {reduced ? stat.value : 0}
-              </span>
-              {stat.suffix}
-            </div>
-            <p className="mt-3 text-sm leading-snug text-bone/70">{stat.label}</p>
+    <section className="border-y border-bone/10 bg-ground bg-grid py-20 md:py-28">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 text-center md:flex-row md:items-center md:gap-14 md:text-left lg:gap-20">
+        <div className="shrink-0">
+          <div className="font-display text-7xl tabular-nums leading-none text-amber sm:text-8xl md:text-9xl">
+            <Counter to={15} suffix="+" />
           </div>
-        ))}
+          <p className="mt-3 font-display text-sm uppercase tracking-[0.25em] text-bone/70 md:text-base">
+            Years Of Experience
+          </p>
+        </div>
+        <div className="hidden h-20 w-px shrink-0 bg-bone/15 md:block" aria-hidden />
+        <p className="max-w-md text-base leading-relaxed text-bone/70 md:text-lg">
+          Nick Hindley has spent over 15 years turning wrenches and running wire on
+          real jobs — hands-on experience you can count on, not sales talk.
+        </p>
       </div>
     </section>
   );
