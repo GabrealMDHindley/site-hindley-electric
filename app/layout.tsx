@@ -3,6 +3,7 @@ import { Inter, Oswald } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import LoadingScreen from "@/components/loading/LoadingScreen";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-ground font-sans text-bone antialiased">
         <JsonLd />
+        <LoadingScreen />
         <Navbar />
         <main>{children}</main>
         <Footer />
