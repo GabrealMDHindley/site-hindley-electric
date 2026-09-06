@@ -7,7 +7,7 @@ import { jobTypes } from "@/lib/site-config";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClasses =
-  "focus-ring w-full border border-bone/20 bg-ground px-4 py-3 text-bone placeholder:text-muted/60 transition-colors focus:border-amber";
+  "focus-ring w-full border border-bone/20 bg-ground px-4 py-3 text-bone placeholder:text-muted/60 transition-colors focus:border-red";
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
@@ -63,9 +63,9 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="border border-amber/40 bg-surface p-8 text-center"
+        className="border border-red/40 bg-surface p-8 text-center"
       >
-        <p className="font-display text-2xl uppercase text-amber">Got it.</p>
+        <p className="font-display text-2xl uppercase text-red">Got it.</p>
         <p className="mt-3 text-bone/80">
           Thanks — Nick will get back to you directly about your job. If it's urgent,
           give us a call.
@@ -177,7 +177,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="focus-ring w-full bg-amber px-7 py-4 font-display text-sm uppercase tracking-wide text-ground transition-all hover:bg-amber-glow disabled:opacity-60 sm:w-auto"
+        className="focus-ring w-full bg-red px-7 py-4 font-display text-sm uppercase tracking-wide text-ground transition-all hover:bg-red-glow disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Sending…" : "Send Job Request"}
       </button>

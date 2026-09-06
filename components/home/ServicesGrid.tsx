@@ -18,18 +18,18 @@ export default function ServicesGrid() {
           <Reveal as="li" key={service.slug} delay={0} className="list-none">
             <Link
               href={`/contact?job=${encodeURIComponent(service.jobType)}`}
-              className="focus-ring group flex h-full flex-col justify-between border border-bone/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-amber/60 hover:bg-raised"
+              className="focus-ring group flex h-full flex-col justify-between border border-bone/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red/60 hover:bg-raised"
             >
               <div>
                 <span className="font-display text-xs text-muted">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 font-display text-lg uppercase leading-tight text-bone group-hover:text-amber">
+                <h3 className="mt-3 font-display text-lg uppercase leading-tight text-bone group-hover:text-red">
                   {service.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{service.blurb}</p>
               </div>
-              <span className="mt-6 font-display text-xs uppercase tracking-wide text-amber opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="mt-6 font-display text-xs uppercase tracking-wide text-red opacity-0 transition-opacity group-hover:opacity-100">
                 Request this job →
               </span>
             </Link>

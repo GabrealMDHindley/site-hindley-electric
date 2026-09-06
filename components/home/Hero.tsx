@@ -25,7 +25,7 @@ export default function Hero() {
           initial={reduced ? undefined : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-display text-xs uppercase tracking-[0.4em] text-amber"
+          className="font-display text-xs uppercase tracking-[0.4em] text-red"
         >
           {siteConfig.businessName} — Residential &amp; Commercial
         </motion.p>
@@ -40,7 +40,7 @@ export default function Hero() {
           <br />
           Direct.
           <br />
-          <span className="text-amber">No Runaround.</span>
+          <span className="text-red">No Runaround.</span>
         </motion.h1>
 
         <motion.p

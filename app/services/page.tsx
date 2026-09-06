@@ -32,11 +32,11 @@ export default function ServicesPage() {
             <Reveal key={service.slug} delay={i * 0.03}>
               <div
                 id={service.slug}
-                className="scroll-mt-28 border border-bone/10 bg-surface p-8 transition-colors hover:border-amber/40 md:p-10"
+                className="scroll-mt-28 border border-bone/10 bg-surface p-8 transition-colors hover:border-red/40 md:p-10"
               >
                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                   <div className="max-w-2xl">
-                    <span className="font-display text-xs text-amber">
+                    <span className="font-display text-xs text-red">
                       {String(i + 1).padStart(2, "0")} /{" "}
                       {String(services.length).padStart(2, "0")}
                     </span>
@@ -58,7 +58,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <Reveal className="mt-16 border border-amber/30 bg-surface p-8 text-center md:p-12">
+        <Reveal className="mt-16 border border-red/30 bg-surface p-8 text-center md:p-12">
           <h2 className="font-display text-2xl uppercase text-bone sm:text-3xl">
             Not sure which one fits?
           </h2>
@@ -68,7 +68,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="focus-ring mt-6 inline-flex items-center justify-center bg-amber px-7 py-3.5 font-display text-sm uppercase tracking-wide text-ground transition-colors hover:bg-amber-glow"
+            className="focus-ring mt-6 inline-flex items-center justify-center bg-red px-7 py-3.5 font-display text-sm uppercase tracking-wide text-ground transition-colors hover:bg-red-glow"
           >
             Get a Free Quote
           </Link>

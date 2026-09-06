@@ -6,9 +6,9 @@ const base =
 
 const variants = {
   primary:
-    "bg-amber text-ground hover:bg-amber-glow hover:shadow-[0_0_28px_rgba(255,195,0,0.45)] active:scale-[0.98]",
+    "bg-red text-ground hover:bg-red-glow hover:shadow-[0_0_28px_rgba(229,35,27,0.45)] active:scale-[0.98]",
   ghost:
-    "border border-bone/30 text-bone hover:border-amber hover:text-amber active:scale-[0.98]",
+    "border border-bone/30 text-bone hover:border-red hover:text-red active:scale-[0.98]",
 };
 
 type Variant = keyof typeof variants;

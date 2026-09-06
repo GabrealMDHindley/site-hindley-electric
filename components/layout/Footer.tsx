@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-xs uppercase tracking-[0.25em] text-amber">
+          <h3 className="font-display text-xs uppercase tracking-[0.25em] text-red">
             Services
           </h3>
           <ul className="mt-4 space-y-2.5">
@@ -46,7 +46,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/services"
-                className="focus-ring text-sm text-amber transition-colors hover:text-amber-glow"
+                className="focus-ring text-sm text-red transition-colors hover:text-red-glow"
               >
                 View all services →
               </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-xs uppercase tracking-[0.25em] text-amber">
+          <h3 className="font-display text-xs uppercase tracking-[0.25em] text-red">
             Company
           </h3>
           <ul className="mt-4 space-y-2.5">
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-xs uppercase tracking-[0.25em] text-amber">
+          <h3 className="font-display text-xs uppercase tracking-[0.25em] text-red">
             Contact
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-muted">

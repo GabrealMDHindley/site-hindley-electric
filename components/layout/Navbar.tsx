@@ -48,7 +48,7 @@ export default function Navbar() {
             className="h-10 w-auto"
           />
           <span className="font-display text-lg uppercase tracking-wide text-bone">
-            Hindley <span className="text-amber">Electric</span>
+            Hindley <span className="text-red">Electric</span>
           </span>
         </Link>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`focus-ring font-display text-sm uppercase tracking-wide transition-colors ${
-                pathname === link.href ? "text-amber" : "text-bone/80 hover:text-amber"
+                pathname === link.href ? "text-red" : "text-bone/80 hover:text-red"
               }`}
             >
               {link.label}
@@ -94,7 +94,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`focus-ring py-3 font-display text-base uppercase tracking-wide ${
-                  pathname === link.href ? "text-amber" : "text-bone/80"
+                  pathname === link.href ? "text-red" : "text-bone/80"
                 }`}
               >
                 {link.label}

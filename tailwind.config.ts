@@ -13,12 +13,12 @@ const config: Config = {
         raised: "#1C1C1C",
         bone: "#F5F2E8",
         muted: "#9C9890",
-        amber: {
-          DEFAULT: "#FFC300",
-          dim: "#B38900",
-          glow: "#FFD84D",
+        red: {
+          DEFAULT: "#E5231B",
+          dim: "#8C120B",
+          glow: "#FF4A3D",
         },
-        spark: "#EAF4FF",
+        spark: "#FFD9D4",
       },
       fontFamily: {
         display: ["var(--font-oswald)", "sans-serif"],
@@ -26,7 +26,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hazard-stripe":
-          "repeating-linear-gradient(135deg, #FFC300 0 14px, #0A0A0A 14px 28px)",
+          "repeating-linear-gradient(135deg, #E5231B 0 14px, #0A0A0A 14px 28px)",
       },
       keyframes: {
         flicker: {

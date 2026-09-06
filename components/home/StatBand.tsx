@@ -38,7 +38,7 @@ export default function StatBand() {
     <section className="border-y border-bone/10 bg-ground bg-grid py-20 md:py-28">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 text-center md:flex-row md:items-center md:gap-14 md:text-left lg:gap-20">
         <div className="shrink-0">
-          <div className="font-display text-7xl tabular-nums leading-none text-amber sm:text-8xl md:text-9xl">
+          <div className="font-display text-7xl tabular-nums leading-none text-red sm:text-8xl md:text-9xl">
             <Counter to={15} suffix="+" />
           </div>
           <p className="mt-3 font-display text-sm uppercase tracking-[0.25em] text-bone/70 md:text-base">

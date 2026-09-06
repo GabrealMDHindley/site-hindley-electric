@@ -81,7 +81,7 @@ export default function LoadingScreen() {
           <button
             type="button"
             onClick={finish}
-            className="focus-ring absolute bottom-6 right-6 font-display text-xs uppercase tracking-[0.2em] text-bone/50 transition-colors hover:text-amber"
+            className="focus-ring absolute bottom-6 right-6 font-display text-xs uppercase tracking-[0.2em] text-bone/50 transition-colors hover:text-red"
           >
             Skip
           </button>

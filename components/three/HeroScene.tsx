@@ -54,7 +54,7 @@ function Bolt({ reduced }: { reduced: boolean }) {
         color="#e8e2d4"
         metalness={0.85}
         roughness={0.22}
-        emissive="#ffc300"
+        emissive="#e5231b"
         emissiveIntensity={1.1}
       />
     </mesh>
@@ -69,8 +69,8 @@ export default function HeroScene({ reduced = false }: { reduced?: boolean }) {
       camera={{ position: [0, 0, 5.2], fov: 42 }}
     >
       <ambientLight intensity={0.35} />
-      <pointLight position={[4, 3, 5]} intensity={120} color="#ffd84d" />
-      <pointLight position={[-4, -2, 3]} intensity={40} color="#eaf4ff" />
+      <pointLight position={[4, 3, 5]} intensity={120} color="#ff4a3d" />
+      <pointLight position={[-4, -2, 3]} intensity={40} color="#ffd9d4" />
       <directionalLight position={[0, 4, 2]} intensity={0.6} color="#f5f2e8" />
       <Bolt reduced={reduced} />
       {!reduced && (
@@ -80,7 +80,7 @@ export default function HeroScene({ reduced = false }: { reduced?: boolean }) {
           size={2}
           speed={0.25}
           opacity={0.5}
-          color="#ffc300"
+          color="#e5231b"
         />
       )}
     </Canvas>

@@ -38,7 +38,7 @@ export default function ContactPage() {
 
           <Reveal delay={0.1} className="space-y-8">
             <div className="border border-bone/10 bg-surface p-6">
-              <h2 className="font-display text-xs uppercase tracking-[0.25em] text-amber">
+              <h2 className="font-display text-xs uppercase tracking-[0.25em] text-red">
                 Direct
               </h2>
               <dl className="mt-4 space-y-3 text-sm">
@@ -46,7 +46,7 @@ export default function ContactPage() {
                   <dt className="text-muted">Phone</dt>
                   <dd className="mt-0.5 text-bone">
                     {phone ? (
-                      <a href={phone} className="focus-ring hover:text-amber">
+                      <a href={phone} className="focus-ring hover:text-red">
                         {siteConfig.phoneDisplay}
                       </a>
                     ) : (
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <dt className="text-muted">Email</dt>
                   <dd className="mt-0.5 text-bone">
                     {mail ? (
-                      <a href={mail} className="focus-ring hover:text-amber">
+                      <a href={mail} className="focus-ring hover:text-red">
                         {siteConfig.email}
                       </a>
                     ) : (
@@ -77,8 +77,8 @@ export default function ContactPage() {
               </dl>
             </div>
 
-            <div className="border border-amber/30 bg-surface p-6">
-              <h2 className="font-display text-xs uppercase tracking-[0.25em] text-amber">
+            <div className="border border-red/30 bg-surface p-6">
+              <h2 className="font-display text-xs uppercase tracking-[0.25em] text-red">
                 What Happens Next
               </h2>
               <ol className="mt-4 space-y-2 text-sm text-bone/80">

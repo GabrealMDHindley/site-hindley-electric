@@ -28,7 +28,7 @@ export default function MeetNickTeaser() {
           </p>
           <Link
             href="/about"
-            className="focus-ring mt-6 inline-block font-display text-sm uppercase tracking-wide text-amber hover:text-amber-glow"
+            className="focus-ring mt-6 inline-block font-display text-sm uppercase tracking-wide text-red hover:text-red-glow"
           >
             Read the full story →
           </Link>

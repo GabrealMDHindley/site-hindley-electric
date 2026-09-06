@@ -7,10 +7,10 @@ export default function CtaBand() {
 
   return (
     <section className="relative overflow-hidden bg-ground bg-grid py-28">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-red/60 to-transparent" />
       <Reveal className="mx-auto max-w-3xl px-6 text-center">
         <h2 className="font-display text-4xl uppercase leading-tight text-bone sm:text-6xl">
-          Power problem? <span className="text-amber">Let&rsquo;s fix it.</span>
+          Power problem? <span className="text-red">Let&rsquo;s fix it.</span>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base text-bone/70">
           Tell us what's going on and Nick will get back to you directly — no call

@@ -81,7 +81,7 @@ export default function AboutPage() {
                 key={step.title}
                 className="grid gap-2 border-b border-bone/10 py-8 md:grid-cols-[140px_1fr] md:gap-8"
               >
-                <span className="font-display text-sm uppercase tracking-wide text-amber">
+                <span className="font-display text-sm uppercase tracking-wide text-red">
                   {step.years}
                 </span>
                 <div>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 key={value.title}
                 className="border border-bone/10 bg-surface p-7"
               >
-                <h3 className="font-display text-lg uppercase text-amber">
+                <h3 className="font-display text-lg uppercase text-red">
                   {value.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-bone/70">{value.body}</p>
