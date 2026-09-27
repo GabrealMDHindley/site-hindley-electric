@@ -6,16 +6,16 @@ export const siteConfig = {
   businessName: "Hindley Electric",
   ownerName: "Nick Hindley",
   tagline: "Licensed. Direct. No Runaround.",
-  phone: null as string | null, // e.g. "+1-555-123-4567"
-  phoneDisplay: null as string | null, // e.g. "(555) 123-4567"
-  email: null as string | null, // e.g. "nick@hindleyelectric.com"
+  phone: "+1-719-357-2441" as string | null,
+  phoneDisplay: "(719) 357-2441" as string | null,
+  email: "nick@hindleyelectric.com" as string | null,
   address: null as string | null, // street address, if a physical office exists
   city: null as string | null,
   state: null as string | null,
   zip: null as string | null,
   serviceArea: "Serving the entire Central Coast — and anywhere else needed.",
   hours: "Mon–Fri, 7am–3:30pm — open 24/7 for emergency calls",
-  licenseLine: "Licensed, bonded & insured — license # [CONFIRM]",
+  licenseLine: "Licensed, bonded & insured — license # 1161865",
   yearsExperience: 20,
   yearsAsPartner: 5,
   siteUrl: "https://site-hindley-electric.vercel.app",

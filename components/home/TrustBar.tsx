@@ -1,7 +1,8 @@
 import { Reveal, RevealStagger } from "@/components/ui/Reveal";
+import { siteConfig } from "@/lib/site-config";
 
 const items = [
-  "Licensed, Bonded & Insured*",
+  "Licensed, Bonded & Insured",
   "20+ Years in the Trade",
   "Owner-Operated",
   "Free Phone Quotes & Estimates",
@@ -21,7 +22,7 @@ export default function TrustBar() {
         ))}
       </RevealStagger>
       <p className="mx-auto max-w-7xl px-6 pb-4 text-xs text-muted/70">
-        *License number available on request — pending confirmation for display.
+        {siteConfig.licenseLine}.
       </p>
     </section>
   );
