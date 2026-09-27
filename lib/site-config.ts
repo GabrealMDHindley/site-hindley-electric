@@ -13,23 +13,26 @@ export const siteConfig = {
   city: null as string | null,
   state: null as string | null,
   zip: null as string | null,
-  serviceArea: "Serving [CONFIRM SERVICE AREA]",
-  hours: "Mon–Fri [CONFIRM HOURS]",
+  serviceArea: "Serving the entire Central Coast — and anywhere else needed.",
+  hours: "Mon–Fri, 7am–3:30pm — open 24/7 for emergency calls",
   licenseLine: "Licensed, bonded & insured — license # [CONFIRM]",
-  yearsExperience: 15,
-  yearsAsPartner: 3,
+  yearsExperience: 20,
+  yearsAsPartner: 5,
   siteUrl: "https://site-hindley-electric.vercel.app",
 } as const;
 
 export const jobTypes = [
   "Tripped or loss of power",
   "Replace or add lighting",
+  "Full home lighting upgrade",
   "Replace or add ceiling fans",
   "Add or replace outlets",
   "Sch job walk for remodel",
   "EV install (how far from panel)",
   "Panel replacement (what type of panel, and size)",
   "Solar repair (what type of system do you have)",
+  "Smart home / low-voltage & data wiring",
+  "New construction (home, commercial, or winery)",
 ] as const;
 
 export type JobType = (typeof jobTypes)[number];

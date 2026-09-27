@@ -21,10 +21,11 @@ export default function MeetNickTeaser() {
             Nick Hindley
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-bone/80">
-            15+ years hands-on in the electrical trade, including 3 years as a partner
-            at another electrical company before he put his own name on the door.
-            Hindley Electric is owner-operated — Nick shows up, scopes the job, and
-            does the work. No subcontractors, no runaround.
+            20+ years hands-on in the electrical trade, including 5 years as a partner
+            operating and managing another large local electrical business, before he
+            put his own name on the door. Hindley Electric is owner-operated — Nick
+            shows up, scopes the job, and does the work. No subcontractors, no
+            runaround.
           </p>
           <Link
             href="/about"

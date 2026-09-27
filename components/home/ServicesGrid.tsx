@@ -9,7 +9,7 @@ export default function ServicesGrid() {
       <Reveal>
         <SectionLabel>What We Handle</SectionLabel>
         <h2 className="mt-4 max-w-2xl font-display text-4xl uppercase leading-[1.05] text-bone sm:text-5xl">
-          Eight jobs. One call.
+          Every job. One call.
         </h2>
       </Reveal>
 

@@ -28,6 +28,12 @@ const copy: Record<JobType, { title: string; blurb: string; detail: string }> = 
     detail:
       "Swap out dated fixtures, add lighting where there isn't any, or rewire a room to code — indoors or out.",
   },
+  "Full home lighting upgrade": {
+    title: "Full Home Lighting Upgrade",
+    blurb: "Rewiring and upgrading lighting through the whole house, room by room.",
+    detail:
+      "A coordinated lighting upgrade across the entire home — new circuits, fixtures, and switching planned together instead of room by room.",
+  },
   "Replace or add ceiling fans": {
     title: "Ceiling Fans — Replace or Add",
     blurb: "New fan install or a swap-out, wired and mounted right.",
@@ -60,9 +66,21 @@ const copy: Record<JobType, { title: string; blurb: string; detail: string }> = 
   },
   "Solar repair (what type of system do you have)": {
     title: "Solar Repair",
-    blurb: "Existing solar system down or underperforming.",
+    blurb: "Existing solar system down, underperforming, or due for a true-up.",
     detail:
-      "Troubleshooting and repair for existing residential solar systems. Knowing your system type helps us get you an accurate quote faster.",
+      "Troubleshooting and repair for existing residential solar systems, including true-up service. Knowing your system type helps us get you an accurate quote faster.",
+  },
+  "Smart home / low-voltage & data wiring": {
+    title: "Smart Home & Low-Voltage Wiring",
+    blurb: "Smart home setups, low-voltage runs, and data wiring.",
+    detail:
+      "From a first smart-home setup to low-voltage and data wiring for a full build, Hindley Electric plans and installs the run — set up a quote to talk through what you're after.",
+  },
+  "New construction (home, commercial, or winery)": {
+    title: "New Construction",
+    blurb: "New homes, commercial projects, and wineries — wired from the ground up.",
+    detail:
+      "Electrical for new-construction projects of any size — homes, commercial buildings, and wineries — scoped and wired from the ground up.",
   },
 };
 

@@ -9,7 +9,7 @@ import CtaBand from "@/components/home/CtaBand";
 export const metadata: Metadata = {
   title: "Licensed Electrician",
   description:
-    "Hindley Electric — licensed residential and commercial electrical work. Panels, EV chargers, lighting, outlets, ceiling fans, solar repair, and remodel wiring.",
+    "Hindley Electric — licensed residential, commercial, and industrial electrical work. Panels, EV chargers, lighting, outlets, ceiling fans, solar repair, low-voltage & data, new construction, and remodel wiring.",
 };
 
 export default function HomePage() {

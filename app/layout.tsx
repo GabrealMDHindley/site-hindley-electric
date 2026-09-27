@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.businessName}`,
   },
   description:
-    "Hindley Electric — licensed residential and commercial electrical work from Nick Hindley, 15+ years in the trade. Panels, EV chargers, lighting, outlets, solar repair, and more.",
+    "Hindley Electric — licensed residential, commercial, and industrial electrical work from Nick Hindley, 20+ years in the trade. Panels, EV chargers, lighting, outlets, solar repair, low-voltage & data, and more.",
   openGraph: {
     title: `${siteConfig.businessName} | Licensed Electrician`,
     description:
-      "Licensed, direct, no runaround. Nick Hindley brings 15+ years of hands-on electrical experience to every job.",
+      "Licensed, direct, no runaround. Nick Hindley brings 20+ years of hands-on electrical experience to every job.",
     url: siteConfig.siteUrl,
     siteName: siteConfig.businessName,
     images: ["/brand/logo.png"],

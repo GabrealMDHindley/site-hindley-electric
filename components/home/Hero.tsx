@@ -27,7 +27,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="font-display text-xs uppercase tracking-[0.4em] text-red"
         >
-          {siteConfig.businessName} — Residential &amp; Commercial
+          {siteConfig.businessName} — Residential, Commercial &amp; Industrial
         </motion.p>
 
         <motion.h1
@@ -49,9 +49,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-6 max-w-xl text-lg text-bone/80"
         >
-          Nick Hindley — 15+ years in the electrical trade, now running his own shop.
-          Panels, power, lighting, EV chargers, solar repair. One licensed electrician,
-          every job.
+          Nick Hindley — 20+ years in the electrical trade, now running his own shop.
+          Residential, commercial, industrial, solar repair, low-voltage &amp; data —
+          no job too small or too big. One licensed electrician, every job.
         </motion.p>
 
         <motion.div

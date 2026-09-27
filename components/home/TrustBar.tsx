@@ -2,9 +2,9 @@ import { Reveal, RevealStagger } from "@/components/ui/Reveal";
 
 const items = [
   "Licensed, Bonded & Insured*",
-  "15+ Years in the Trade",
+  "20+ Years in the Trade",
   "Owner-Operated",
-  "Free Written Quotes",
+  "Free Phone Quotes & Estimates",
 ];
 
 export default function TrustBar() {

@@ -12,6 +12,12 @@ export default function JsonLd() {
     telephone: siteConfig.phone ?? undefined,
     email: siteConfig.email ?? undefined,
     areaServed: siteConfig.serviceArea,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "15:30",
+    },
     address: siteConfig.address
       ? {
           "@type": "PostalAddress",

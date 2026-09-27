@@ -8,7 +8,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Electrical services from Hindley Electric: panel replacement, EV charger install, lighting, ceiling fans, outlets, remodel wiring, and solar repair.",
+    "Electrical services from Hindley Electric: panel replacement, EV charger install, lighting, ceiling fans, outlets, remodel wiring, solar repair, smart home & low-voltage wiring, and new construction.",
 };
 
 export default function ServicesPage() {
@@ -21,7 +21,8 @@ export default function ServicesPage() {
             What we handle.
           </h1>
           <p className="mt-5 max-w-xl text-bone/70">
-            Residential and commercial electrical work, scoped and quoted directly by
+            Commercial, industrial, residential, solar repair, and low-voltage/data —
+            we do it all. No job too small or too big, scoped and quoted directly by
             Nick Hindley. Don&rsquo;t see your job listed? Send it through the contact
             form anyway.
           </p>
